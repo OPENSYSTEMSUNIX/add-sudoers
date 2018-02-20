@@ -1,4 +1,3 @@
-## Allows people in assorted groups to run all commands
-{% for g in sudoers_groups %}
-%{{g}} ALL=(ALL) NOPASSWD:ALL
-{% endfor %}
+## Allows people in the {{sudoers_group}} group to run all commands
+
+%{{sudoers_group}} ALL=(ALL) NOPASSWD:ALL
