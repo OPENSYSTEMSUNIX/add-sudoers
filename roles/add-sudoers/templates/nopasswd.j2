@@ -1,3 +1,6 @@
-## Allows people in the {{sudoers_group}} group to run all commands
+## This file is managed by ansible
+## Allows people in the following groups to run all commands
 
-%{{sudoers_group}} ALL=(ALL) NOPASSWD:ALL
+{% for group in sudoers_groups %}
+%{{group}} ALL=(ALL) NOPASSWD:ALL
+{% endfor %}
